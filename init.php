@@ -1,5 +1,5 @@
 <?php
-class MarkAsRead extends Plugin {
+class ToggleReadUnread extends Plugin {
 
 	private $host;
 
