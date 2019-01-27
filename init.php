@@ -1,5 +1,5 @@
 <?php
-class ToggleReadUnread extends Plugin {
+class Toggle_Read_Unread extends Plugin {
 
 	private $host;
 
