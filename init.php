@@ -24,17 +24,17 @@ class MarkAsRead extends Plugin {
 	}
 	
 	function get_js() {
-		return file_get_contents(dirname(__FILE__) . "/markasread.js");
+		return file_get_contents(dirname(__FILE__) . "/toggle_read_unread.js");
 	}
 
 	function get_css() {
-		return "i.icon-toggle-unread { color : black; }";
+		return "i.icon-toggle-read-unread { color : black; }";
 	}
 
 	function hook_article_button($line) {
 		$myId = $line["id"];
 
-		return "<i class='material-icons icon-toggle-unread' style='cursor : pointer' onclick='markasreadClicked(event,$myId);' title='".__('Toggle read/unread')."'>radio_button_checked</i>";
+		return "<i class='material-icons icon-toggle-read-unread' style='cursor : pointer' onclick='toggleReadUnread(event,$myId);' title='".__('Toggle read/unread')."'>radio_button_checked</i>";
 	}
 
 }

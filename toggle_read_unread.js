@@ -1,4 +1,4 @@
-function markasreadClicked(evt, articleId) {
+function toggleReadUnread(evt, articleId) {
 	try {
 		// turn off "event bubbling" for this click.
 		// this is to avoid toggling the Unread state twice
@@ -17,7 +17,7 @@ function markasreadClicked(evt, articleId) {
 		Headlines.toggleUnread(articleId);
 
 	} catch (except) {
-		exception_error("markasreadClicked", except);
+		exception_error("toggleReadUnread", except);
 	}
 }
 
