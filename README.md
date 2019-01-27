@@ -1,62 +1,41 @@
-"Mark as read" plugin for tt-rss
-================================
-This plugin for Tiny Tiny RSS (tt-rss) adds a checkbox in the article footer to mark an article as read and unread just like in dicontinued Google Reader. 
+# "Toggle read/unread' button" plugin for tt-rss
 
-Installation
-------------
+This plugin for Tiny Tiny RSS (tt-rss) adds a button in the article footer to toggle an article as read and unread.
 
-### Using git ###
+Forked from https://github.com/Elv1zz/ttrss_plugin-markasread. "Toggle read/unread' button" does not rely on images.
+
+## Installation
+
+### Using git
+
 Just checkout the code into your plugins folder like this:
 
 ```sh
 $ cd /path/to/your/tt-rss
-$ git clone git://github.com/Elv1zz/ttrss_plugin-markasread plugins/markasread
+$ git clone git://github.com/simardcasanova/ttrss_plugin-toggle_read_unread plugins/toggle_read_unread
 ```
 
 Then go to tt-rss preferences and enable the plugin.
 
-### Without using git ###
+### Without using git
 Manually download, extract and copy the archive like this:
 ```sh
 $ cd /tmp
-$ wget https://github.com/Elv1zz/ttrss_plugin-markasread/archive/master.zip
+$ wget https://github.com/simardcasanova/ttrss_plugin-toggle_read_unread/archive/master.zip
 $ unzip master.zip
-$ mkdir /path/to/your/tt-rss/plugins/markasread
-$ cp ttrss_plugin-markasread-master/* /path/to/your/tt-rss/plugins/markasread
+$ mkdir /path/to/your/tt-rss/plugins/toggle_read_unread
+$ cp ttrss_plugin-markasread-master/* /path/to/your/tt-rss/plugins/toggle_read_unread
 ```
 
 Then go to tt-rss preferences and enable the plugin.
 
-Update
-------
+## Update
+
 Just pull the most recent version from the server:
 
 ```sh
-$ cd /path/to/your/tt-rss/plugins/markasread
+$ cd /path/to/your/tt-rss/plugins/toggle_read_unread
 $ git pull origin master
 ```
 
 and you are done. 
-
-Current status
---------------
-This version of the plugin is fully working: Marking articles as read and unread works correctly. Also the unread status is reflected correctly when it gets changed by other means (like clicking in the article, mark all as read, mark-as-read from the context menu).
-
-Any additional issues, problems or feature request can be found or made in the GitHub [issue tracker](https://github.com/Elv1zz/ttrss_plugin-markasread/issues).
-
-Browser compatibility:
-----------------------
-
-| Browser          | Version   | State    |
-| ---------------- | --------- | -------- |
-| Chromium         | 26        | works    |
-| Epiphany         | 2.30      | works    |
-| FireFox          | 17        | works    |
-| Internet Explorer| 8         | works    |
-| Opera            |           | untested |
-| Safari           | 12        | works    |
-
-Copyright
----------
-Elv1zz (Elvizz), 2013-2018
-
