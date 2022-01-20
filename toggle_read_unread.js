@@ -1,4 +1,24 @@
-function toggleReadUnread(evt, articleId) {
+
+const getState = (articleId) => {
+	return document.getElementById(`RROW-${articleId}`).classList.contains("Unread");
+};
+
+const setState = (elem, state) => {
+	elem.innerHTML = state ? "radio_button_checked" : "radio_button_unchecked";
+};
+
+require(['dojo/_base/kernel', 'dojo/ready'], function (dojo, ready) {
+	ready(function () {
+		PluginHost.register(PluginHost.HOOK_COUNTERS_PROCESSED, () => {
+			elem = dojo.byId("toggle_read_unread_plugin");
+			if (elem) {
+				setState(elem, getState(Article.getActive()));
+			}
+		});
+	});
+});
+
+function toggleReadUnread(evt, elem, articleId) {
 	try {
 		// turn off "event bubbling" for this click.
 		// this is to avoid toggling the Unread state twice
@@ -15,9 +35,12 @@ function toggleReadUnread(evt, articleId) {
 		//  Unread will become Read
 		//  Read will become Unread
 		Headlines.toggleUnread(articleId);
+		
+		setState(elem, getState(articleId));
 
-	} catch (except) {
-		exception_error("toggleReadUnread", except);
+
+	} catch (e) {
+		console.warn("toggleReadUnread", e);
 	}
 }
 
